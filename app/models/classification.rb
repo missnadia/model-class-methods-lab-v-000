@@ -7,6 +7,6 @@ class Classification < ActiveRecord::Base
   end
 
   def self.longest
-    all.limit(1).order(length: :desc)
+    all.maximum("length")
   end
 end
