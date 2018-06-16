@@ -33,4 +33,5 @@ class Boat < ActiveRecord::Base
 
   def self.longest
     length.maximum("length")
+  end
 end
