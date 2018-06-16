@@ -7,6 +7,6 @@ class Classification < ActiveRecord::Base
   end
 
   def self.longest
-    all.boat_id.length.maximum("length")
+    Boat.maximum("length")
   end
 end
