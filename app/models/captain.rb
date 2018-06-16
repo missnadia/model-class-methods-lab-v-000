@@ -14,6 +14,6 @@ class Captain < ActiveRecord::Base
   end
 
   def self.non_sailors
-    includes(boat: :classifications).where.not(classifications: { name: 'Sailboat' })
+    includes(boats: :classifications).where.not(classifications: { name: 'Sailboat' })
   end
 end
