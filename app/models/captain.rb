@@ -18,7 +18,7 @@ class Captain < ActiveRecord::Base
   end
 
   def self.talented_seafarers
-    where(self.sailboat_operators, self.motorboat_operators)
+    where(self.sailboat_operators, self.motorboat_operators).pluck(:name)
   end
 
   def self.non_sailors
