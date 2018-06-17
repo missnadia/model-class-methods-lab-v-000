@@ -18,6 +18,6 @@ class Captain < ActiveRecord::Base
   end
 
   def self.non_sailors
-    includes(boats: :classifications).where.not(classifications: { name: 'Sailboat' }).pluck(:name).uniq
+    where.not("id IN (?)", self.sailors.pluck(:id))
   end
 end
